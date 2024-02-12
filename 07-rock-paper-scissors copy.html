@@ -64,6 +64,8 @@ alert(`You picked paper. Computer picked ${computerMove}. ${result}`);
 
   randomNumber = Math.random();
   computerMove = '';
+
+  pickComputerMove(); 
   
       if (randomNumber >= 0 && randomNumber < 1/3) {
        computerMove = 'rock'
@@ -86,6 +88,7 @@ alert(`You picked paper. Computer picked ${computerMove}. ${result}`);
   alert(`You picked Scissors. Computer picked ${computerMove}. ${result}`);
     ">Scissors</button>
   
+
   <script>
     function pickComputerMove() {randomNumber = Math.random();
   computerMove = '';
