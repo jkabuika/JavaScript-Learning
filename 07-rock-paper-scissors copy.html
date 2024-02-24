@@ -25,11 +25,8 @@
   ">Rock</button>
 
   <button onclick="
-
-randomNumber = Math.random();
-computerMove = '';
-pickComputerMove();
-result = ''; 
+    const computerMove = pickComputerMove();
+    let result = ''; 
 
 if (computerMove === 'rock') {
   result = 'You win!'
