@@ -39,20 +39,26 @@ alert(`You picked paper. Computer picked ${computerMove}. ${result}`);
   ">Paper</button>
 
   <button onclick="
-  const computerMove = pickComputerMove() 
-  let result = ''; 
+  playgame('scissors');
   
-  if (computerMove === 'rock') {
-    result = 'You lose.'
-  } else if (computerMove === 'paper') {
-    result = 'You win!'
-  } else if (computerMove === 'scissors') {
-    result = 'Tie.'
-  }
-  alert(`You picked Scissors. Computer picked ${computerMove}. ${result}`);
     ">Scissors</button>
 
   <script>
+    function playgame(playerMove) {const computerMove = pickComputerMove() 
+      let result = ''; 
+      
+      if (playerMove === 'scissors') {  
+        if (computerMove === 'rock') {
+          result = 'You lose.'
+        } else if (computerMove === 'paper') {
+          result = 'You win!'
+        } else if (computerMove === 'scissors') {
+          result = 'Tie.'
+        }
+      }
+
+      alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);}
+
     function pickComputerMove(){
       const randomNumber = Math.random();
       let computerMove = '';
