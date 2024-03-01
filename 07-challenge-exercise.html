@@ -28,17 +28,16 @@
 
 
   function convertTemperature(degrees, unit){
-    if (unit = 'F') {
+    if (unit === 'F') {
       const result = convertToCelsius(degrees)
       return `${result}C`;
-    } else if (unit = 'C') {
+    } else if (unit === 'C') {
       const result = convertToFahrenheit(degrees)
       return `${result}F`;
-    }
-
-console.log(convertTemperature(25, 'C'))
-   
+    }   
   }
+  console.log(convertTemperature(25, 'C'))
+
 
 </script>
 
