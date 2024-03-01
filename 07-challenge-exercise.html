@@ -10,7 +10,7 @@
 
 <script>
   function greet(name = 'there'){
-    console.log(`Hello ${name}`)
+    // console.log(`Hello ${name}`)
   };
 
   greet();
@@ -18,23 +18,26 @@
   function convertToFahrenheit(celsius) {
         return (celsius * 9 / 5) + 32;
       }
-      console.log(convertToFahrenheit(25));
+      // console.log(convertToFahrenheit(25));
+
 
   function convertToCelsius(fahrenheit){
     return (fahrenheit - 32) * 5 / 9 
   }
-  console.log(convertToCelsius(86))
+  // console.log(convertToCelsius(86)) 
+
 
   function convertTemperature(degrees, unit){
-    if (unit = fahrenheit) {
-      celcius = convertToCelsius(fahrenheit)
-      console.log(celsius)
-    } else if (unit = celcius) {
-      fahrenheit = convertToFahrenheit(celcius)
-      console.log(fahrenheit)
+    if (unit = 'F') {
+      const result = convertToCelsius(degrees)
+      return `${result}C`;
+    } else if (unit = 'C') {
+      const result = convertToFahrenheit(degrees)
+      return `${result}F`;
     }
 
-    
+console.log(convertTemperature(25, 'C'))
+   
   }
 
 </script>
