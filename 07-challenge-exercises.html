@@ -43,37 +43,43 @@
     </p>
   <p>
     <button onclick="
-      calculation += '7';
+      updateCalculation('7');
       console.log(calculation)">7</button>
       
       <button onclick="
-      calculation += '8';
+      updateCalculation('8');
       console.log(calculation)">8</button>
       
       <button onclick="
-      calculation += '9';
+      updateCalculation('9');
       console.log(calculation)">9</button>
       
       <button onclick="
-      calculation += ' * ';
+      updateCalculation(' * ');
       console.log(calculation)">×</button>
     </p>
     <p> 
         <button onclick="
-        calculation += '0';
+        updateCalculation('0');
         console.log(calculation)">0</button>
 
+        <button onclick="
+        updateCalculation('.');
+        ">.</button>
+        
+        <button onclick="
+        calculation = eval(calculation);
+        console.log(calculation)">=</button>
+        
+        <button onclick="
+        updateCalculation(' / ');
+        console.log(calculation)">÷</button>
+
+        
         <button onclick="
         calculation = 0;
         console.log('CLEARED')">CE</button>
 
-        <button onclick="
-    calculation = eval(calculation);
-    console.log(calculation)">=</button>
-        
-        <button onclick="
-        calculation += ' / ';
-        console.log(calculation)">÷</button>
       </p>    
 
 
