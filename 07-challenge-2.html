@@ -46,7 +46,11 @@ console.log(`Cart Quantity: ${cartQuantity}`);
 
   <script>
     let cartQuantity = 0;
-    
+
+    function updateCartQuantity(value) {
+      cartQuantity += value;
+      console.log(cartQuantity)
+    }
   </script>
 </body>
 </html>
