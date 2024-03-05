@@ -67,11 +67,12 @@
       } else if (result === 'Tie.') {
         score.ties += 1;
       }
-// (NEW STEP ADDED ABOVE)
 
       alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
-      Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
     }
+    // (NEW STEP ADDED ABOVE)
+
 
     function pickComputerMove(){
       const randomNumber = Math.random();
