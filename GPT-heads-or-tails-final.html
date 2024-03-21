@@ -45,6 +45,7 @@
       width: 100px;
       height: 100px;
       margin-top: 20px;
+      display: none; /* Initially hide the images */
     }
   </style>
 </head>
@@ -55,6 +56,7 @@
     <button onclick="guessResult('tails')">Tails</button>
     <div class="result" id="result"></div>
     <img id="coinImage" src="" alt="">
+    <img id="tailImage" src="" alt="">
   </div>
   <script>
     function guessResult(guess) {
@@ -62,10 +64,22 @@
       const result = randomNumber < 0.5 ? 'heads' : 'tails';
       const resultDisplay = document.getElementById('result');
       const coinImage = document.getElementById('coinImage');
+      const tailImage = document.getElementById('tailImage');
 
-      coinImage.src = result === 'heads' ? 'heads.png' : 'tails.png';
-      coinImage.style.display = 'block';
+      // Hide both images initially
+      coinImage.style.display = 'none';
+      tailImage.style.display = 'none';
 
+      // Display the appropriate image based on the result
+      if (result === 'heads') {
+        coinImage.src = 'heads.png';
+        coinImage.style.display = 'block';
+      } else {
+        tailImage.src = 'tails.png';
+        tailImage.style.display = 'block';
+      }
+
+      // Update the result display
       if (guess === result) {
         resultDisplay.innerHTML = '<p class="win">You win!</p>';
       } else {
