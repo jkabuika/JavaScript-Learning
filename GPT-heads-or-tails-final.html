@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
-  <body>
-    <script>
+<head>
+  <title>Heads or Tails</title>
+  <style>
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Heads or Tails Game</h1>
+  <button onclick="guessResult('heads')">Heads</button>
+  <button onclick="guessResult('tails')">Tails</button>
+  <div id="result"></div>
+  <script>
+    function guessResult(guess) {
       const randomNumber = Math.random();
       const result = randomNumber < 0.5 ? 'heads' : 'tails';
 
-      const guess = 'heads';
-      console.log(guess === result ? 'You win!' : 'You lose!');
-    </script>
-  </body>
+      const resultDisplay = document.getElementById('result');
+      const coinImage = document.createElement('img');
+      coinImage.src = result === 'heads' ? 'heads.png' : 'tails.png';
+      coinImage.alt = result;
+      coinImage.style.display = 'block';
+      resultDisplay.innerHTML = '';
+      resultDisplay.appendChild(coinImage);
+
+      if (guess === result) {
+        resultDisplay.innerHTML += '<p>You win!</p>';
+      } else {
+        resultDisplay.innerHTML += '<p>You lose!</p>';
+      }
+    }
+  </script>
+</body>
 </html>
