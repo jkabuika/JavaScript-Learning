@@ -55,8 +55,8 @@
     <button onclick="guessResult('heads')">Heads</button>
     <button onclick="guessResult('tails')">Tails</button>
     <div class="result" id="result"></div>
-    <img id="coinImage" src="https://www.iconpacks.net/icons/1/free-coin-icon-794-thumb.png" alt="">
-    <img id="tailImage" src="https://img.freepik.com/premium-vector/fox-tail-icon-vector-template_598213-6508.jpg" alt="">
+    <img id="coinImage" src="./assets/coin-794.png" alt="">
+    <img id="tailImage" src="./assets/tail.png" alt="">
   </div>
   <script>
     function guessResult(guess) {
@@ -72,10 +72,8 @@
 
       // Display the appropriate image based on the result
       if (result === 'heads') {
-        coinImage.src = 'heads.png';
         coinImage.style.display = 'block';
       } else {
-        tailImage.src = 'tails.png';
         tailImage.style.display = 'block';
       }
 
