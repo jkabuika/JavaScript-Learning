@@ -1,36 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Heads or Tails</title>
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      margin: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+    }
     img {
       width: 100px;
       height: 100px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>Heads or Tails Game</h1>
-  <button onclick="guessResult('heads')">Heads</button>
-  <button onclick="guessResult('tails')">Tails</button>
-  <div id="result"></div>
+  <div class="container">
+    <h1>Heads or Tails</h1>
+    <button onclick="guessResult('heads')">Heads</button>
+    <button onclick="guessResult('tails')">Tails</button>
+    <div class="result" id="result"></div>
+    <img id="coinImage" src="" alt="">
+  </div>
   <script>
     function guessResult(guess) {
       const randomNumber = Math.random();
       const result = randomNumber < 0.5 ? 'heads' : 'tails';
-
       const resultDisplay = document.getElementById('result');
-      const coinImage = document.createElement('img');
+      const coinImage = document.getElementById('coinImage');
+
       coinImage.src = result === 'heads' ? 'heads.png' : 'tails.png';
-      coinImage.alt = result;
       coinImage.style.display = 'block';
-      resultDisplay.innerHTML = '';
-      resultDisplay.appendChild(coinImage);
 
       if (guess === result) {
-        resultDisplay.innerHTML += '<p>You win!</p>';
+        resultDisplay.innerHTML = '<p class="win">You win!</p>';
       } else {
-        resultDisplay.innerHTML += '<p>You lose!</p>';
+        resultDisplay.innerHTML = '<p class="lose">You lose!</p>';
       }
     }
   </script>
