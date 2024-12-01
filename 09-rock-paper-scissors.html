@@ -19,8 +19,10 @@
 
   <button onclick="
   playgame('scissors');
-    ">Scissors</button>
+  ">Scissors</button>
 
+  <p class="js-result"></p>
+  <p class="js-moves"></p>
   <p class="js-score"></p>
 
   <button onclick="
@@ -28,6 +30,7 @@
     score.losses = 0;
     score.ties = 0;
     localStorage.removeItem('score');
+    updateScoreElement()
   ">Reset Score</button>
 
   <script>
@@ -94,8 +97,10 @@
 
       updateScoreElement();
 
-      alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
-      Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+      document.querySelector('.js-result').innerHTML = `${result}`
+      document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} Computer`
+
+    
     }
     // (NEW STEP ADDED ABOVE)
 
