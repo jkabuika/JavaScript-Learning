@@ -37,8 +37,7 @@
         ties : 0
       }
 
-      document.querySelector('.js-score')
-        .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties})`;
+      updateScoreElement()
 /*
     if (!score) {
       score = {
@@ -93,12 +92,17 @@
 
       localStorage.setItem('score', JSON.stringify(score));
 
+      updateScoreElement();
 
       alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
       Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
     }
     // (NEW STEP ADDED ABOVE)
 
+    function updateScoreElement() {
+      document.querySelector('.js-score')
+        .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+    }
 
     function pickComputerMove(){
       const randomNumber = Math.random();
