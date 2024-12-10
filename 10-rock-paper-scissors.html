@@ -36,6 +36,18 @@
       font-weight: bold;
       margin-top: 50px;
     }
+
+    .score {
+      margin-top: 60px;
+    }
+
+    .reset-score-button {
+      background-color: white;
+      border: none;
+      font-size: 16px;
+      padding: 8px 15px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -54,8 +66,13 @@
   " class="move-button"><img src="./rock-paper-scissors-assets/scissors-emoji.png" alt="Scissors emoji" class="emojis"></button>
 
   <p class="js-result result">You Win</p>
-  <p class="js-moves"></p>
-  <p class="js-score"></p>
+  <p class="js-moves">
+    You
+    <img src="rock-paper-scissors-assets/rock-emoji.png" alt="" class="emojis">
+    <img src="rock-paper-scissors-assets/scissors-emoji.png" alt="" class="emojis">
+    Computer
+  </p>
+  <p class="js-score score"></p>
 
   <button onclick="
     score.wins = 0;
@@ -63,7 +80,7 @@
     score.ties = 0;
     localStorage.removeItem('score');
     updateScoreElement()
-  ">Reset Score</button>
+  " class="reset-score-button">Reset Score</button>
 
   <script>
     let score = JSON.parse(localStorage.getItem('score')) || {
