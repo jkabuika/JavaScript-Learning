@@ -65,13 +65,8 @@
   playgame('scissors');
   " class="move-button"><img src="./rock-paper-scissors-assets/scissors-emoji.png" alt="Scissors emoji" class="emojis"></button>
 
-  <p class="js-result result">You Win</p>
-  <p class="js-moves">
-    You
-    <img src="rock-paper-scissors-assets/rock-emoji.png" alt="" class="emojis">
-    <img src="rock-paper-scissors-assets/scissors-emoji.png" alt="" class="emojis">
-    Computer
-  </p>
+  <p class="js-result result"></p>
+  <p class="js-moves"></p>
   <p class="js-score score"></p>
 
   <button onclick="
@@ -147,7 +142,10 @@
       updateScoreElement();
 
       document.querySelector('.js-result').innerHTML = result
-      document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} Computer`
+      document.querySelector('.js-moves').innerHTML = `You
+    <img src="rock-paper-scissors-assets/${playerMove}-emoji" alt="${playerMove}" class="emojis">
+    <img src="rock-paper-scissors-assets/${computerMove}-emoji.png" alt="${computerMove}" class="emojis">
+    Computer`
 
     
     }
