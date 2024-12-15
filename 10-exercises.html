@@ -13,6 +13,7 @@
   padding: 6px 18px;
   border: none;
   border-radius: 7px;
+  cursor: pointer;
  }
 
  .is-toggled {
@@ -22,7 +23,7 @@
 </style>
 <body>
 <button onclick="
-  const button = document.querySelector('js-button');
+  const button = document.querySelector('.js-button');
   if (button.classList.contains('is-toggled')) {
     button.classList.remove('is-toggled')
   } else {
