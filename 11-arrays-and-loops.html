@@ -5,16 +5,16 @@
 </head>
 <body>
   <p>Todo List Practice 1</p>
-  <input type="text" placeholder="Todo name" class="js-input">
-  <button onclick="
-  const listItem = document.querySelector('.js-input')
-  let toDoList = ['']
-  toDoList.push(listItem);
-  console.log(toDoList)
-  " class="js-button">Add</button>
+  <input type="text" placeholder="Todo name">
+  <button onclick=" 
+  addTodo()
+  " class="js-name-input">Add</button>
 
   <script>
-
+    const todoList = [];
+    function addTodo() {
+      const inputElement = document.querySelector('.js-name-input')
+    }
   </script>
 </body>
 </html>
