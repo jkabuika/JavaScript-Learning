@@ -11,7 +11,7 @@
   ">Add</button>
 
   <script>
-    const todoList = [];
+   /* const todoList = [];
     function addTodo() {
       const inputElement = document.querySelector('.js-name-input')
       const name = inputElement.value;
@@ -19,6 +19,19 @@
       console.log(todoList)
       inputElement.value = ''
     }
+
+  */ 
+
+  const todoList = [
+    'make dinner',
+    'wash dishes',
+    'watch youtube'
+  ]
+
+  for (let index = 0; index <= todoList.length - 1; index++) {
+    const value = todoList[index]
+    console.log(value)
+  }
   </script>
 </body>
 </html>
