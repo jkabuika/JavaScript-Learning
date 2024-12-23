@@ -6,6 +6,7 @@
 <body>
   <p>Todo List Practice 1</p>
   <input type="text" placeholder="Todo name" class="js-name-input">
+  <input type="date">
   <button onclick=" 
   addTodo()
   ">Add</button>
@@ -13,7 +14,12 @@
   <div class="js-todo-list"></div>
 
   <script>
-   const todoList = ['make my bed', 'do my homework'];
+    const todoList = [{
+      name: 'make my bed',
+      dueDate: '2024-12-22'
+    }, {
+      name:'do my homework',
+      dueDate: '2024=12=22'}];
 
     renderTodoList()
 
