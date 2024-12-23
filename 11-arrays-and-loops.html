@@ -13,7 +13,7 @@
   <div class="js-todo-list"></div>
 
   <script>
-   const todoList = ['Do my bed', 'Get ready'];
+   const todoList = [];
 
     renderTodoList()
 
@@ -38,6 +38,8 @@
         todoList.push(name)
         console.log(todoList)
         inputElement.value = ''
+
+        renderTodoList()
     }
 
 
